@@ -1,0 +1,32 @@
+<head>
+    <title>meteor-for-everyone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<body>
+<ul>
+    <div class="container">
+        {{#if error}}
+            {{> Template.errorBlock}}
+        {{/if}}
+            <form class="row form-task">
+                <input placeholder="your new message ✉️ ✉️ ✉️" id="first_name" name="title" type="text" class="validate col s12  form-task_title">
+                <label for="first_name">First Name</label>
+            </form>
+        <ul class="collection">
+            {{#each resolutions}}
+                {{>resolution}}
+            {{/each}}
+        </ul>
+    </div>
+</ul>
+</body>
+
+<template name="resolution">
+    <li class="collection-item">{{title}}</li>
+</template>
+
+
+<template name="errorBlock">
+    <p class="collection-item" style="color: orangered">{{error}}</p>
+</template>
